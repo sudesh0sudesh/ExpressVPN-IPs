@@ -43,6 +43,9 @@ jobs:
       - name: Clean up Express VPN output
         run: python express_vpn_cleanup.py
 
+      - name: Express Subnet detail Generation
+        run: python express_subnet_CSV.py
+
       - name: Configure Git
         run: |
           git config --local user.email "sudesh@sudesh.com"
@@ -50,7 +53,7 @@ jobs:
 
       - name: Commit changes
         run: |
-          git add express_ips.csv new_express_ips.csv express_subnet.txt
+          git add express_ips.csv new_express_ips.csv express_subnet.txt express_subnet.csv
           git diff-index --quiet HEAD || git commit -m "[AUTO] update IoCs $(date '+%Y-%m-%d %H:%M:%S')"
           
       - name: Push changes
