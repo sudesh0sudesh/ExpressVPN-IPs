@@ -37,7 +37,7 @@ jobs:
     
           
       - name: Executing subfinder
-        run: subfinder -d expressnetw.com -o express_temp.txt
+        run: $HOME/go/bin/subfinder -d expressnetw.com -o express_temp.txt
       
 
 
