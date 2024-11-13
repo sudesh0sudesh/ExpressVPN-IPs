@@ -34,8 +34,7 @@ jobs:
         
         run: |
           sudo go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
-          sudo echo export PATH=$PATH:$HOME/go/bin >> $home/.bashrc
-          sudo source $home/.bashrc
+    
           
       - name: Executing subfinder
         run: subfinder -d expressnetw.com -o express_temp.txt
