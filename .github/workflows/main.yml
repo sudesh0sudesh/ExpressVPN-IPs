@@ -1,4 +1,4 @@
-name: PIA IP Updater
+name: Express IP Updater
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
-  update-iocs:
+  update-ips:
     runs-on: ubuntu-latest
     permissions:
       contents: write
