@@ -2,7 +2,7 @@ name: PIA Hostname Updater
 
 on:
   schedule:
-    - cron: '0 0 1 * *'  # Runs every 1 hours
+    - cron: '0 0 */7 * *'  # Runs every 1 hours
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
