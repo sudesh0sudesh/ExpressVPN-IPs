@@ -146,3 +146,4 @@ uk-east-london-ca-version-2.expressnetw.com
 peru-ca-version-2.expressnetw.com
 usa-losangeles5-ca-version-2.expressnetw.com
 switzerland-2-ca-version-2.expressnetw.com
+india-sg-ca-version-2.expressnetw.com
