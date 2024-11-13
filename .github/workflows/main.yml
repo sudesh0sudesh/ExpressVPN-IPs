@@ -50,7 +50,7 @@ jobs:
 
       - name: Commit changes
         run: |
-          git add express_ips.csv new_express_ips.csv 
+          git add express_ips.csv new_express_ips.csv express_subnet.txt
           git diff-index --quiet HEAD || git commit -m "[AUTO] update IoCs $(date '+%Y-%m-%d %H:%M:%S')"
           
       - name: Push changes
