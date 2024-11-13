@@ -25,6 +25,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install urllib3
           
+      - name: Setup Go environment
+        uses: actions/setup-go@v5.1.0
+        with:
+          go-version: 'stable'
   
       - name: SubFinder Action
         uses: projectdiscovery/subfinder-action@v1.0.0
