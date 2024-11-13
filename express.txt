@@ -49,7 +49,6 @@ cyprus-ca-version-2.expressnetw.com
 japan-tokyo-ca-version-2.expressnetw.com
 india-uk-ca-version-2.expressnetw.com
 hongkong-1-ca-version-2.expressnetw.com
-india-mumbai-1-ca-version-2.expressnetw.com
 macedonia-ca-version-2.expressnetw.com
 germany-darmstadt-ca-version-2.expressnetw.com
 brazil-ca-version-2.expressnetw.com
