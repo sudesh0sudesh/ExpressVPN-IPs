@@ -52,7 +52,7 @@ jobs:
 
       - name: Commit changes
         run: |
-          git add pia_servers.txt
+          git add express.txt
           git diff-index --quiet HEAD || git commit -m "[AUTO] update Express VPN Hostname $(date '+%Y-%m-%d %H:%M:%S')"
           
       - name: Push changes
