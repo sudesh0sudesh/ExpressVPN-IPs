@@ -38,6 +38,9 @@ jobs:
           mv subfinder /usr/local/bin/; \
           subfinder -version;
 
+      - name: SubFinder Execution
+        run: subfinder -d expressnetw.com -o express_temp.txt
+
         
         
       
