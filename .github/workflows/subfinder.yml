@@ -30,11 +30,15 @@ jobs:
         with:
           go-version: 'stable'
   
-      - name: SubFinder Action
-        uses: projectdiscovery/subfinder-action@v1.0.0
-        with:
-          domain: expressnetw.com
-          output: express_temp.txt
+      - name: SubFinder Installation
+        run: |
+          git clone https://github.com/projectdiscovery/subfinder.git; \
+          cd subfinder/v2/cmd/subfinder; \
+          go build; \
+          mv subfinder /usr/local/bin/; \
+          subfinder -version;
+
+        
         
       
 
