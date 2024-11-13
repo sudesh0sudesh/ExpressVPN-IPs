@@ -1,0 +1,58 @@
+name: PIA IP Updater
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'  # Runs every 2 hours
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  update-iocs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies and zmap
+        run: |
+          python -m pip install --upgrade pip
+          pip install dnspython
+          pip install requests
+          sudo apt install zmap
+
+      - name: Gather ExpressVPN subnets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python express.py
+
+
+      - name: Express VPN scan
+        run: zmap -w express_subnet.txt -p 80 -r 128 -O csv --output-filter="success = 1" -o 'express_ips_temp.csv'
+      
+     
+      - name: Clean up Express VPN output
+        run: python express_vpn_cleanup.py
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "sudesh@sudesh.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Commit changes
+        run: |
+          git add pia_ips.csv new_pia_ips.csv 
+          git diff-index --quiet HEAD || git commit -m "[AUTO] update IoCs $(date '+%Y-%m-%d %H:%M:%S')"
+          
+      - name: Push changes
+        id: push
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
