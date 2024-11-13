@@ -33,7 +33,7 @@ jobs:
       - name: Downloading subfinder
         
         run: |
-          go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+          sudo go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
           sudo echo export PATH=$PATH:$HOME/go/bin >> $home/.bashrc
           sudo source $home/.bashrc
           
