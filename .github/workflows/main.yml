@@ -2,7 +2,7 @@ name: Express IP Updater
 
 on:
   schedule:
-    - cron: '0 */3 * * *'  # Runs every 2 hours
+    - cron: '0 */1 * * *'  # Runs every 1 hours
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
