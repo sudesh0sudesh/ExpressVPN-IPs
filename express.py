@@ -104,7 +104,7 @@ def main():
     domains = read_domains_from_file(DOMAIN_FILE)
     subnets,ips = resolve_domains_to_subnets(domains, resolver)
     write_subnets_to_file(subnets, OUTPUT_FILE)
-    write_ips_to_file(ips, NEW_IPS_FILE)
+    write_ips_to_file(ips, MAIN_FILE)
     
 
 if __name__ == "__main__":
