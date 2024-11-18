@@ -12,5 +12,3 @@ This data is for informational purposes only. IP addresses may change without no
 ## Contributing
 Feel free to submit pull requests with updates or corrections to the IP list.
 
-## License
-MIT License
