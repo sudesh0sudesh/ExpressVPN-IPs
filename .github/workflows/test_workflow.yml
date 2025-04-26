@@ -37,7 +37,7 @@ jobs:
 
 
       - name: Express VPN scan
-        run: sudo zmap -w express_subnet.txt -p 80 -r 128  --output-filter="success = 1" -b custom_blocklist.txt
+        run: sudo zmap -w express_subnet.txt -p 80 -r 128 -v 4 --output-filter="success = 1" -b custom_blocklist.txt
       
      
       - name: Clean up Express VPN output
