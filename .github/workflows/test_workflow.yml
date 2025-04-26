@@ -38,7 +38,7 @@ jobs:
 
 
       - name: Express VPN scan
-        run: sudo zmap -w express_subnet.txt -p 80 -r 128 -v 4 --output-filter="success = 1" -o 'express_ips_temp.csv' 
+        run: sudo zmap -w express_subnet.txt -p 80 -r 128 -v 5 --output-filter="success = 1" -o 'express_ips_temp.csv' 
       
      
       - name: Clean up Express VPN output
