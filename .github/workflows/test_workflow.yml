@@ -26,6 +26,7 @@ jobs:
           pip install dnspython
           pip install requests
           sudo apt install zmap
+          cat /etc/zmap/blacklist.conf
 
       - name: Gather ExpressVPN subnets
         env:
